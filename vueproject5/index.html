@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+    </script>
+    <style>
+        .fixImageSize{
+            height:100px;
+            width:100px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="our-app">
+        <h3>Counter: {{counter}}</h3>
+        <button type="button"
+        name="button" @click.once="incrementby1">Increment</button>
+        <br><br>
+        <a href="https://www.google.com" v-on:click.prevent>Google</a>
+        <br><br>
+        <form class="" action="#" method="POST" v-on:submit.prevent>
+            <button type="submit" name="button">Submit</button>
+        </form>
+        <br/><br/>
+        <div id="parent-div" @click="submitClick">
+             <button id="child-div" @click.stop="submitClick">click Me</button>
+        </div>
+        <div id="parent-div" @click.capture="parentClass">
+             <button id="child-div" @click="btnClick">click Me</button>
+        </div>
+    </div>
+
+     <script src="app.js"></script>
+  </body>
+</html>
